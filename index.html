@@ -1,8 +1,44 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <script src="/index.js" type="module"></script>
-    </body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img class="header-icon" src="images/icon-profile.png" alt="" />
+      <img class="header-logo" src="images/logo.png" alt="" />
+      <img class="header-icon" src="images/icon-chat.png" alt="" />
+    </header>
+    <main>
+      <div id="profile" class="profile">
+        <!-- <div class="profile-text">
+          <h1>Name</h1>
+          <p>Some random text</p>
+        </div>
+        <img src="/images/dog-teddy.jpg" alt="" /> -->
+        <div class="badge"></div>
+      </div>
+      <div class="interact-btns">
+        <button id="cross-btn" class="cross-btn"></button>
+        <button id="heart-btn" class="heart-btn"></button>
+      </div>
+    </main>
+
+    <script src="/index.js" type="module"></script>
+  </body>
 </html>
