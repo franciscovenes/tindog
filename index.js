@@ -3,12 +3,12 @@ import Dog from "./Dog.js";
 import { endSwipe } from "./utils.js";
 
 let isWating = false;
+let index = 0;
 
 const getNewDog = () => {
-  const index = dogs.findIndex((dog) => !dog.hasBeenSwiped);
+  index = dogs.findIndex((dog) => !dog.hasBeenSwiped);
 
   if (index !== -1) {
-    dogs[index].hasBeenSwiped = true;
     return new Dog(dogs[index]);
   } else {
     return null;
@@ -17,6 +17,7 @@ const getNewDog = () => {
 
 const swipe = () => {
   if (!isWating) {
+    dogs[index].hasBeenSwiped = true;
     dog.getBadgeHtml();
     isWating = true;
 
@@ -24,24 +25,20 @@ const swipe = () => {
       dog = getNewDog();
       dog ? render() : endSwipe();
       isWating = false;
+      console.log(dogs);
     }, 1000);
   }
 };
 
 document.addEventListener("click", (e) => {
   if (e.target.id === "heart-btn") {
+    dogs[index].hasBeenLiked = true;
     dog.setLike();
     swipe();
   } else if (e.target.id === "cross-btn") {
     swipe();
   }
 });
-
-/* document.getElementById("heart-btn").addEventListener("click", () => {
-  dog.setLike();
-  swipe();
-});
-document.getElementById("cross-btn").addEventListener("click", swipe); */
 
 const render = () => {
   document.getElementById("profile").innerHTML = dog.getDogHtml();

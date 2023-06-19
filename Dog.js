@@ -23,7 +23,6 @@ class Dog {
   }
 
   getBadgeHtml() {
-    console.log("Badge");
     const img = document.createElement("img");
     img.src = this.hasBeenLiked
       ? "images/badge-like.png"
